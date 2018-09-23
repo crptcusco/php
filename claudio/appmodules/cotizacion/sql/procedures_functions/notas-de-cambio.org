@@ -1,0 +1,11 @@
+1. nueva cotizacion (cambiar el insert)
+   d:/AppServ/www/claudio-dev/appmodules/cotizacion/sql/cotizacion_nuevo.sql
+2. cambiar html, hacer BK
+   d:/AppServ/www/claudio-dev/appmodules/cotizacion/tabs/montos.php
+3. cambiar js, hacer BK 
+   d:/AppServ/www/claudio-dev/static/js/cotizacion_montos.js
+4. ¿como hacer los cambios?
+   hace otras tablas y registrar los archivos afectado, para
+   elminarlos
+5. afectados
+   1. a

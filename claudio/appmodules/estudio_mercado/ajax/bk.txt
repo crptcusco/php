@@ -1,0 +1,8 @@
+  <script type="text/javascript" language="javascript">
+   var table<?php echo $nodo ?>_Props =  {                     
+     display_all_text: " [ Mostrar todos ] ",  
+     paging: true,
+     paging_length: 3,
+   };  
+   var tf<?php echo $nodo ?> = setFilterGrid( "table_<?php echo $nodo ?>",table1_Props );
+  </script> 

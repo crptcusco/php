@@ -1,0 +1,42 @@
+#co_box_mensajes {
+  background-color: #92F0BA;
+  bottom: 0;
+  display: block;
+  float: right;
+  position: fixed;
+  right: 0;
+  width: 200px;
+}
+#co_box_mensajes a.caja {
+    display: block;
+    color: black;
+    
+}
+#co_box_mensajes a.caja:hover {
+    background-color: #6AE39D;
+}
+
+#co_box_mensajes .box {
+    border:1px solid;
+}
+#co_box_mensajes .box1 {
+  border-right: 0 none;
+  padding-left: 9px;
+  width: 180px;
+}
+#co_box_mensajes .box2 {
+  width: 20px;
+  text-align:center;
+}
+
+#co_box_mensajes .box3 {
+  border-top: 0 none;
+  padding-left: 9px;
+  width: 200px;
+}
+#co_box_mensajes .box3 li {
+  list-style: inside none disc;
+}
+#co_box_mensajes .box3 li a {
+  color: black;
+}

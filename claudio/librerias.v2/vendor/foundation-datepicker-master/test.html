@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Foundation datepicker</title>
+    <meta name="description" content="Port of bootstrap datepicker to Zurb Foundation framework">
+    <meta name="author" content="Peter Beno, najlepsiwebdesigner@gmail.com">
+    <!-- CDN -->
+    <script src="../jquery.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="../foundation/css/foundation.min.css">
+    <script src="../modernizr.js"></script>
+
+    <script src="js/foundation-datepicker.js"></script>
+    <link rel="stylesheet" href="stylesheets/foundation-datepicker.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <header class="row">
+	<div class="small-12 columns">
+	  <h1>Datepicker for Foundation</h1>
+          <h2 class="subheader">foundation-datepicker.js</h2>
+	</div>
+
+      </header>
+      <div class="row">
+	<div class="small-12 columns">
+	  <h2>Example</h2>
+
+	  <p>Attached to a field with the format specified via options.</p>
+	  <div class="panel">
+	    <input type="text" class="span2" value="02-16-2012" id="dp1">
+	  </div>
+	  <p>Attached to a field with the format specified via data tag and close button enabled.</p>
+	  <div class="panel">
+	    <input type="text" class="span2" value="02/16/12" data-date-format="mm/dd/yy" id="dp2">
+	  </div>
+	  <p>As component.</p>
+	  <div class="panel">
+	    <div class="row date collapse" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+	      <input class="small-3 columns" size="16" type="text" value="12-02-2012" readonly>	<span class="prefix small-2 columns end"><i class="fa fa-calendar"></i></span>
+	    </div>
+	  </div>
+	  <div class="panel highlight">
+	    <p>With large margin</p>
+	    <div class="panel">
+	      <input type="text" class="span2" value="02/16/12" data-date-format="mm/dd/yy" id="dp-margin">
+	    </div>
+	  </div>
+	  <p>Limit the view mode to months</p>
+	  <div class="panel">
+	    <div class="row collape date" id="dpMonths" data-date="102/2012" data-date-format="mm/yyyy" data-date-viewmode="years" data-date-minviewmode="months">
+	      <input class="small-3 columns" size="16" type="text" value="02/2012" readonly>	<span class="prefix small-1 columns end"><i class="fa fa-calendar"></i></span>
+
+	    </div>
+	  </div>
+	  <p>Attached to other element then field and using events to work with the date values.</p>
+	  <div class="panel">
+	    <div class="alert alert-box" id="alert"><strong>Mensaje</strong>
+
+	    </div>
+	    <table class="table">
+	      <thead>
+		<tr>
+		  <th>Inicio&nbsp;
+		    <a href="#" class="button small" id="dp4" data-date-format="dd-mm-yyyy" data-date="20-02-2012">Cambiar</a>
+		  </th>
+		  <th>Fin&nbsp;
+		    <a href="#" class="button small" id="dp5" data-date-format="dd-mm-yyyy" data-date="25-02-2012">Cambiar</a>
+		  </th>
+		</tr>
+	      </thead>
+	      <tbody>
+		<tr>
+		  <td id="startDate">20-02-2012</td>
+		  <td id="endDate">25-02-2012</td>
+		</tr>
+	      </tbody>
+	    </table>
+	  </div>
+	  <p>Disabling dates in the past and dependent disabling.</p>
+	  <div class="panel">
+	    <table class="table">
+	      <thead>
+		<tr>
+		  <th>Check in:
+		    <input type="text" class="span2" value="" id="dpd1">
+		  </th>
+		  <th>Check out:
+		    <input type="text" class="span2" value="" id="dpd2">
+		  </th>
+		</tr>
+	      </thead>
+	    </table>
+	  </div>
+	</div>
+      </div>
+			</section>
+    </div>
+    <script>
+     $(function () {
+       $('#dp1').fdatepicker({
+	 format: 'mm-dd-yyyy'
+       });
+       $('#dp2').fdatepicker({
+	 closeButton: true
+       });
+       $('#dp3').fdatepicker();
+       $('#dp3').fdatepicker();
+       $('#dp-margin').fdatepicker();
+       $('#dpMonths').fdatepicker();
+       var startDate = new Date(2012, 1, 20);
+       var endDate = new Date(2012, 1, 25);
+       $('#alert').hide()
+       $('#dp4').fdatepicker().on('changeDate', function (ev) {
+	 if (ev.date.valueOf() > endDate.valueOf()) {
+	   $('#alert').show().find('strong').html('La fecha de <u>inicio</u> no puede ser mayor a la fecha de <u>fin</u>');
+	 } else {
+	   $('#alert').hide();
+	   startDate = new Date(ev.date);
+	   $('#startDate').text($('#dp4').data('date'));
+	 }
+	 $('#dp4').fdatepicker('hide');
+       });
+       $('#dp5').fdatepicker().on('changeDate', function (ev) {
+	 if (ev.date.valueOf() < startDate.valueOf()) {
+	   $('#alert').show().find('strong').html('La fecha de <u>fin</u> no puede ser inferior a la fecha de <u>inicio</u>');
+	 } else {
+	   $('#alert').hide();
+	   endDate = new Date(ev.date);
+	   $('#endDate').text($('#dp5').data('date'));
+	 }
+	 $('#dp5').fdatepicker('hide');
+       });
+       // implementation of disabled form fields
+       var nowTemp = new Date();
+       var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+       var checkin = $('#dpd1').fdatepicker({
+	 onRender: function (date) {
+	   return date.valueOf() < now.valueOf() ? 'disabled' : '';
+	 }
+       }).on('changeDate', function (ev) {
+	 if (ev.date.valueOf() > checkout.date.valueOf()) {
+	   var newDate = new Date(ev.date)
+	   newDate.setDate(newDate.getDate() + 1);
+	   checkout.update(newDate);
+	 }
+	 checkin.hide();
+	 $('#dpd2')[0].focus();
+       }).data('datepicker');
+       var checkout = $('#dpd2').fdatepicker({
+	 onRender: function (date) {
+	   return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+	 }
+       }).on('changeDate', function (ev) {
+	 checkout.hide();
+       }).data('datepicker');
+     });
+    </script>
+
+  </body>
+
+</html>

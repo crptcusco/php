@@ -1,0 +1,10 @@
+SELECT
+id, mapa_latitud, mapa_longitud, ruta_informe 
+FROM t_departamen
+WHERE
+mapa_latitud LIKE '%.000%' OR mapa_longitud LIKE '%.000%' OR
+mapa_latitud LIKE '%.' OR mapa_longitud LIKE '%.' OR
+mapa_latitud LIKE '.%' OR mapa_longitud LIKE '.%' OR
+mapa_latitud REGEXP '[abcdefghijklmnopquvwxyzº]' OR mapa_longitud REGEXP '[abcdefghijklmnopquvwxyzº]'
+-- mapa_latitud NOT LIKE '%.%' OR mapa_longitud NOT LIKE '%.%'
+ORDER BY 3 DESC LIMIT 5000

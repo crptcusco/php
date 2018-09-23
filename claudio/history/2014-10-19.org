@@ -1,0 +1,5 @@
+* tareas 
+  - [ ] mejorar la conexion
+  - [ ] file, mejorar funcion
+  - [ ] unir fechas y validar y crear clases
+  - [ ] crear algo para numeros

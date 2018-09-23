@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="es" >
+
+  <head>
+    <meta charset="utf-8">
+    <!-- If you delete this meta tag World War Z will become a reality -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulo Facturación</title>
+
+    <!-- If you are using the CSS version, only link these 2 files, you may add app.css to use for your overrides if you like -->
+    <link rel="stylesheet" href="../../../../../librerias.v2/vendor/normalize.css">
+    <link rel="stylesheet" href="../../../../../librerias.v2/vendor/foundation/css/foundation.css">
+    <link rel="stylesheet" href="../../../../../librerias.v2/vendor/foundation-icons/foundation-icons.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../../../librerias.v2/main.css">
+
+
+    <script src="../../../../../librerias.v2/vendor/modernizr.js"></script>
+
+  </head>
+  <body>
+    <h1>By Ajax</h1>
+    <div class="row">
+      <form class="custom">
+	<fieldset>
+	  <legend>Fieldset</legend>
+	  <div class="row">
+	    <div class="large-12 columns ui-widget">
+	      <label for="tags">Input Label</label>
+	      <input id="tags" type="text" placeholder="large-12.columns">
+	    </div>
+	  </div>
+
+
+    <script src="../../../../../librerias.v2/vendor/jquery.js"></script>
+    <script src="../../../../../librerias.v2/vendor/foundation/js/foundation.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script>
+    $(function() {
+	search_tags();
+	
+	function search_tags() {
+	    var arreglo = [];
+	    var enviar = "id=1";      
+	    
+	    $.ajax({
+		type: "POST",
+		url: "./ajax.html",
+		data: enviar, 
+		success: function(cadena) {	   
+		    arreglo = cadena.split("!!-!!"); 
+		    console.log(arreglo);
+		    $( "#tags" ).autocomplete({
+			source: arreglo
+		    });
+                    console.log(arreglo);
+		}
+	    });
+	}
+	
+    });
+
+    $(document).foundation();
+     
+    </script>
+
+  </body>
+</html>

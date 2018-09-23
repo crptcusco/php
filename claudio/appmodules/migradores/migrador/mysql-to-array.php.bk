@@ -1,0 +1,63 @@
+<?php
+// ---------------------------------------------- ini-libs
+include ("../../librerias.v2/html/etiquetas.php");
+// ---------------------------------------------- ini-header
+EtiquetasHtml::testing_mode(); // edit to end 
+// EtiquetasHtml::$files['header']['css'][] = './style01.css';
+EtiquetasHtml::$title = 'mi titulo';
+EtiquetasHtml::$path = '../../librerias.v2';
+EtiquetasHtml::header();
+// ---------------------------------------------- ini-body
+$mysqli = new mysqli("localhost", "root", "allemant", "allemant02");
+// $mysqli = new mysqli("localhost", "root", "admin", "ella");
+$sql = "
+SELECT
+  id AS 'distrito_id'
+, idProvincia AS 'provincia_id'
+, Nombre AS 'nombre'
+FROM distrito 
+";
+$name = 'ubi_distrito';
+$file = "distrito.sql";
+
+?>
+<div class="row">
+  <div class="large-12 columns">
+    <?php
+    mysql_sql($sql, $name);
+    ?>
+  </div>
+</div>
+
+<?php
+function mysql_sql($sql, $name) {
+  global $mysqli;
+  $malo = array('¥','Ã','Ã');
+  $bueno= array('&Ntilde;','&Aacute;','&Uacute;');
+  if ($mysqli->connect_errno) 
+    echo "Fallo al contenctar a MySQL: " . $mysqli->connect_error;
+  
+  $result = $mysqli->query($sql);
+  $data = array();
+  while ($row = $result->fetch_assoc()) {    
+    $sql_keys = '';
+    $sql_values = '';
+
+    foreach ($row as $key => $value) {
+      $sql_keys .= $key .', ';
+      $value = str_replace($malo, $bueno, $value);
+      $value = utf8_decode($value);
+      $sql_values .= "'".$value."', ";
+    }
+
+    $sql_keys = substr($sql_keys, 0, -2);
+    $sql_values = substr($sql_values, 0, -2);
+    
+    $sql ='INSERT INTO '.$name.'('.$sql_keys.') VALUES('.$sql_values.');';
+    echo $sql .'<br>';
+  }  
+  return $data;
+}
+// ---------------------------------------------- ini-footer
+// EtiquetasHtml::$files['footer']['js'][] = './scripts01.js';
+EtiquetasHtml::footer();

@@ -1,0 +1,19 @@
+* creando librerias
+  - [X] tabla
+    - [X] tabla simple
+    - [X] como simple
+    - [X] tabla doble
+    - [X] test
+  - [X] etiqueta
+    - [X] mejorar files
+    - [X] añador debug
+      - crear funcion que imprima (en caso de solo llamar a estaa y no
+        a lo demas)
+      - parametro que decida si esta en pruebas
+  - [X] reimplementar todo lo echo
+  - [ ] file, mejorar funcion
+  - [ ] unir fechas y validar y crear clases
+  - [ ] crear algo para numeros
+  - [ ] mejorar la conexion
+
+

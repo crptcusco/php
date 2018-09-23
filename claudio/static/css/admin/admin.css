@@ -1,0 +1,99 @@
+.cld-icon-search{
+    background: url("system-search.png") no-repeat scroll 0% 0% transparent;
+    height: 22px;
+    width: 22px;
+    display: block;
+
+}
+.ui-autocomplete {
+    z-index: 2147483647;
+}
+#modal_co_involucrado_natural_documento_tipo_chosen
+,#modal_co_involucrado_juridico_field_clasificacion_chosen
+,#modal_co_involucrado_juridico_field_actividad_chosen
+,#modal_co_involucrado_juridico_field_grupo_chosen
+,#co_montos_field_moneda_general_id_chosen
+,#co_montos_field_moneda_total_id_chosen
+, .select-align-cld .chosen-container
+{
+    margin: 0.5em 0 0 0;
+}
+
+.select-no-margin-cld .chosen-container {
+    margin:0;
+}
+
+table .select-align-cld .chosen-container {
+    margin: 0 ;
+}
+
+.edit_item td{
+    background-color: #52E152;
+}
+
+#co_search_result_items_info {
+    background-color: #ede6e6;
+    padding: 0.3em;
+}
+#co_search_result_items_info li {
+    padding-bottom:0;
+}
+/*
+#co_search_result_items a,
+#co_search_result_items_info a
+{
+    border: 1px solid;
+    display: block;
+    text-align: center;
+}
+
+#co_search_result_items a.estado_1,
+#co_search_result_items_info a.estado_1
+{
+    background-color: #f5f5f5;
+    color: #a4a4a4;
+}
+#co_search_result_items a.estado_1:hover
+{
+    background-color: #a4a4a4;
+    color: white;
+}
+#co_search_result_items a.estado_2,
+#co_search_result_items_info a.estado_2 
+{
+    background-color: #fbffb7;
+    color: #ffc200;
+}
+#co_search_result_items a.estado_2:hover
+{
+    background-color: #ffc200;
+    color: white;
+}
+#co_search_result_items a.estado_3,
+#co_search_result_items_info a.estado_3
+{
+    background-color: #c1fcc0;
+    color: #1c731b;
+}
+#co_search_result_items a.estado_3:hover
+{
+    background-color: #1c731b;
+    color: white;
+}
+#co_search_result_items a.estado_4,
+#co_search_result_items_info a.estado_4
+{
+    background-color: #ffdada;
+    color: #a60000;
+}
+#co_search_result_items a.estado_4:hover
+{
+    background-color: #a60000;
+    color: white;
+}
+*/
+.tabs.vertical.claudio{
+    max-width: 100%;
+    width: 100%;
+}
+

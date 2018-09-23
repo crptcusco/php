@@ -1,0 +1,13 @@
+.dd {
+    background: none repeat scroll 0 0 black;
+
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+}
+.dd  h1{
+    color: red;
+}

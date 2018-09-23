@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="es" >
+
+  <head>
+    <meta charset="utf-8">
+    <!-- If you delete this meta tag World War Z will become a reality -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulo Facturación</title>
+
+    <!-- If you are using the CSS version, only link these 2 files, you may add app.css to use for your overrides if you like -->
+    <link rel="stylesheet" href="../../../../../librerias.v2/vendor/normalize.css">
+    <link rel="stylesheet" href="../../../../../librerias.v2/vendor/foundation/css/foundation.css">
+    <link rel="stylesheet" href="../../../../../librerias.v2/vendor/foundation-icons/foundation-icons.css">
+    <link rel="stylesheet" href="../../../../../librerias.v2/main.css">
+
+    <script src="../../../../../librerias.v2/vendor/modernizr.js"></script>
+
+  </head>
+  <body>
+
+    <div class="row">
+      <div class="large-12 columns">
+	List html
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+	<datalist id="languages">
+	  <option value="HTML"></option>
+	  <option value="CSS"></option>
+	  <option value="JavaScript"></option>
+	  <option value="Java"></option>
+	  <option value="Ruby"></option>
+	  <option value="PHP"></option>
+	  <option value="Go"></option>
+	  <option value="Erlang"></option>
+	  <option value="Python"></option>
+	  <option value="C"></option>
+	  <option value="C#"></option>
+	  <option value="C++"></option>
+	</datalist>
+	<input type="text" list="languages">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+	List ajax
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+	<input type="text" id="ajax" list="json-datalist" placeholder="e.g. datalist">
+	<datalist id="json-datalist"></datalist>
+      </div>
+    </div>
+
+
+    <script src="../../../../../librerias.v2/vendor/jquery.js"></script>
+    <script src="../../../../../librerias.v2/vendor/foundation/js/foundation.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script>   
+
+     var dataList = document.getElementById('json-datalist');
+     var input = document.getElementById('ajax');
+
+     var request = new XMLHttpRequest();
+     request.onreadystatechange = function(response) {
+       if (request.readyState === 4) {
+	 if (request.status === 200) {
+	   var jsonOptions = JSON.parse(request.responseText);
+
+	   jsonOptions.forEach(function(item) {
+             var option = document.createElement('option');
+             option.value = item;
+             dataList.appendChild(option);
+	   });
+
+	   input.placeholder = "e.g. datalist";
+	 } else {
+	   input.placeholder = "Couldn't load datalist options :(";
+	 }
+       }       
+     };
+
+     input.placeholder = "Loading options...";
+
+     request.open('GET', 'html-elements.json', true);
+     request.send();
+
+     $(function() {
+       $(document).foundation();
+     }); 
+    </script>
+  </body>
+</html>

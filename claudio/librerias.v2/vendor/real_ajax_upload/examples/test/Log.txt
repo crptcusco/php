@@ -1,0 +1,168 @@
+﻿allemant
+casa
+4C85-200E-4005-0004-0000-7660-0800-35X3-0000-407M-MX37-**** (*)
+
+Windows XP 5.1
+IA32
+WinAspi: -
+
+NT-SPTI used
+Nero Version: 7.9.6.0
+Internal Version: 7, 9, 6, 0
+ (Nero Express)
+Recorder:             <HL-DT-ST DVDRAM GH22NS90>Version: HN00 - HA 1 TA 0 - 7.9.6.0
+ Adapter driver:      <IDE>                     HA 1
+ Drive buffer  :      1536kB
+ Bus Type      :      via Inquiry data (1) -> ATAPI, detected: ?
+ Connected to MMC as unknown drive with class-nr : 1
+ Drive is autodetected - recorder class: Std. MMC recorder
+CD-ROM:               <HL-DT-ST DVDRAM GH22NS90 >Version: HN00 - HA 1 TA 0 - 7.9.6.0
+ Adapter driver:      <IDE>                     HA 1
+
+=== Scsi-Device-Map ===
+DiskPeripheral       : ST3500413AS                      atapi Port 0 ID 0  DMA: On 
+CdRomPeripheral      : HL-DT-ST DVDRAM GH22NS90         atapi Port 2 ID 0  DMA: On 
+
+=== CDRom-Device-Map ===
+HL-DT-ST DVDRAM GH22NS90   F:   CdRom0
+=======================
+
+AutoRun : 1
+Excluded drive IDs: 
+WriteBufferSize: 83886080 (0) Byte
+BUFE           : 0
+Physical memory     : 1954MB (2001132kB)
+Free physical memory: 339MB (348044kB)
+Memory in use       : 82 %
+Uncached PFiles: 0x0
+Use Inquiry    : 1
+Global Bus Type: default (0)
+Check supported media : Disabled (0) 
+
+21.10.2014
+CD-ROM (ISO)
+04:24:42 p.m.	#1 Text 0 File SCSIPTICommands.cpp, Line 424
+	LockMCN - completed sucessfully for IOCTL_STORAGE_MCN_CONTROL
+	
+04:24:43 p.m.	#2 Text 0 File Isodoc.cpp, Line 6663
+	Iso document burn settings
+	------------------------------------------
+	Determine maximum speed : FALSE
+	Simulate                : FALSE
+	Write                   : TRUE
+	Finalize CD             : FALSE
+	Multisession            : TRUE
+	Multisession type:      : Start multisession
+	Burning mode            : TAO
+	Mode                    : 1
+	ISO Level               : 1 (Max. of 11 = 8 + 3 char)
+	Character set           : ISO 9660
+	Joliet                  : TRUE
+	Allow pathdepth more than 8 directories : FALSE
+	Allow more than 255 characters in path  : FALSE
+	Write ISO9660 ;1 file extensions        : TRUE
+	
+04:24:43 p.m.	#3 Text 0 File Burncd.cpp, Line 3196
+	HL-DT-ST DVDRAM GH22NS90
+	Buffer underrun protection activated
+	
+04:24:43 p.m.	#4 ISO9660GEN -11 File Geniso.cpp, Line 3343
+	First writeable address = 0 (0x00000000)
+	
+04:24:43 p.m.	#5 Text 0 File Burncd.cpp, Line 3508
+	Turn on Track-At-Once, using CD-R/RW media
+	
+04:24:43 p.m.	#6 Text 0 File DlgWaitCD.cpp, Line 307
+	Last possible write address on media:   359845 ( 79:59.70)
+	Last address to be written:                782 (  0:12.32)
+	
+04:24:43 p.m.	#7 Text 0 File DlgWaitCD.cpp, Line 319
+	Write in overburning mode: NO (enabled: CD)
+	
+04:24:43 p.m.	#8 Text 0 File DlgWaitCD.cpp, Line 2964
+	Recorder: HL-DT-ST DVDRAM GH22NS90;
+	   CDR code: 00 97 26 66; OSJ entry from: CMC Magnetics Corporation
+	   ATIP Data:
+	     Special    Info [hex] 1: D0 00 98, 2: 61 1A 42 (LI 97:26.66), 3: 4F 3B 47 (LO 79:59.71)
+	     Additional Info [hex] 1: 00 00 80 (invalid), 2: 00 80 00 (invalid), 3: 00 80 80 (invalid)
+	
+04:24:43 p.m.	#9 Text 0 File DlgWaitCD.cpp, Line 493
+	>>> Protocol of DlgWaitCD activities: <<<
+	=========================================
+	
+04:24:43 p.m.	#10 Text 0 File ThreadedTransferInterface.cpp, Line 793
+	Setup items (after recorder preparation)
+	 0: TRM_DATA_MODE1 ()
+	    2 indices, index0 (150) not provided
+	    original disc pos #0 + 783 (783) = #783/0:10.33
+	    relocatable, disc pos for caching/writing not required/ required
+	    -> TRM_DATA_MODE1, 2048, config 0, wanted index0 0 blocks, length 781 blocks [F: HL-DT-ST DVDRAM GH22NS90]
+	--------------------------------------------------------------
+	
+04:24:43 p.m.	#11 Text 0 File ThreadedTransferInterface.cpp, Line 995
+	Prepare [F: HL-DT-ST DVDRAM GH22NS90] for write in TAO
+	DAO infos:
+	==========
+	 MCN: ""
+	 TOCType: 0x00; Session Closed, disc not fixated
+	 Tracks 1 to 1:                                  Idx 0         Idx 1      Next Trk
+	   1: TRM_DATA_MODE1, 2048/0x00, FilePos             0        307200       1910784, ISRC ""
+	DAO layout:
+	===========
+	 ___Start_|____Track_|_Idx_|_CtrlAdr_|_____Size_|______NWA_|_RecDep__________
+	     -150 |  lead-in |   0 |    0x41 |        0 |        0 | 0x00
+	     -150 |        1 |   0 |    0x41 |        0 |        0 | 0x00
+	        0 |        1 |   1 |    0x41 |      783 |        0 | 0x00
+	      783 | lead-out |   1 |    0x41 |        0 |        0 | 0x00
+	
+04:24:43 p.m.	#12 Text 0 File ThreadedTransferInterface.cpp, Line 1066
+	Removed 2 run-out blocks from end of track 1. Length: 783 -> 781.
+	
+04:24:43 p.m.	#13 Text 0 File SCSIPTICommands.cpp, Line 215
+	SPTILockVolume - completed successfully for FSCTL_LOCK_VOLUME
+	
+04:24:43 p.m.	#14 Text 0 File Burncd.cpp, Line 4294
+	Caching options: cache CDRom or Network-Yes, small files-Yes (<64KB)
+	
+04:24:43 p.m.	#15 Phase 24 File dlgbrnst.cpp, Line 1762
+	Caching of files started
+	
+04:24:43 p.m.	#16 Text 0 File Burncd.cpp, Line 4413
+	Cache writing successful.
+	
+04:24:43 p.m.	#17 Phase 25 File dlgbrnst.cpp, Line 1762
+	Caching of files completed
+	
+04:24:43 p.m.	#18 Phase 36 File dlgbrnst.cpp, Line 1762
+	Burn process started at 48x (7,200 KB/s)
+	
+04:24:43 p.m.	#19 Text 0 File ThreadedTransferInterface.cpp, Line 2721
+	Verifying disc position of item 0 (relocatable, disc pos, no patch infos, orig at #0): write at #0
+	
+04:24:43 p.m.	#20 Text 0 File MMC.cpp, Line 22363
+	Set BUFE: Buffer underrun protection -> ON 
+	
+04:24:43 p.m.	#21 Text 0 File ThreadedTransfer.cpp, Line 269
+	Pipe memory size 83836800
+	
+04:24:56 p.m.	#22 Text 0 File MMC.cpp, Line 17131
+	<HL-DT-STDVDRAM GH22NS90 > start Close Session
+	
+04:25:09 p.m.	#23 Phase 37 File dlgbrnst.cpp, Line 1762
+	Burn process completed successfully at 48x (7,200 KB/s)
+	
+04:25:10 p.m.	#24 Text 0 File SCSIPTICommands.cpp, Line 261
+	SPTIDismountVolume - completed successfully for FSCTL_DISMOUNT_VOLUME
+	
+04:25:16 p.m.	#25 Text 0 File Cdrdrv.cpp, Line 11185
+	DriveLocker: UnLockVolume completed
+	
+04:25:16 p.m.	#26 Text 0 File SCSIPTICommands.cpp, Line 424
+	UnLockMCN - completed sucessfully for IOCTL_STORAGE_MCN_CONTROL
+	
+
+Existing drivers:
+
+Registry Keys:
+HKLM\Software\Microsoft\Windows NT\CurrentVersion\WinLogon\AllocateCDROMs : 0 (Security Option) 
+

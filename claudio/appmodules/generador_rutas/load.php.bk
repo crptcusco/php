@@ -1,0 +1,51 @@
+<?php 
+if ($_FILES['fileToUpload']['type']!='text/csv') {
+    /* echo '<h2>FILES</h2>'; */
+    /* echo '<pre>'; */
+    /* print_r( $_FILES ); */
+    /* echo '</pre>'; */
+
+    echo '
+<div class="row">
+  <div class="small-3 columns small-centered">
+    <div data-alert class="alert-box alert text-center">
+     solo se usa tipo de archivo CSV
+     <a href="#" class="close">&times;</a>
+    </div>
+  </div>
+</div>
+  ';
+} else {
+    $file = fopen($_FILES['fileToUpload']['tmp_name'], 'r');
+
+    $data = array();
+    $header = array();
+    $first = true;
+
+    while(! feof($file)) {
+	if ( $first ) {
+	    $first=false;
+	    $header = fgetcsv($file, 0,'_,','_"') ;
+
+	} else {
+	    $temp = fgetcsv($file, 0,'_,','_"') ;
+	    if ( is_array( $temp ) ){
+		$i = 0;
+		foreach ( $temp as $value ) {
+		    $row[ $header[$i] ] = $value;
+		    $i++; 
+		}/*end foreach*/
+		$data[] = $row;
+	    }
+	}
+    }
+
+
+    echo '<pre>';
+    print_r($data);
+    echo '</pre>';
+
+    fclose($file);
+} 
+
+
